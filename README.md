@@ -1,59 +1,233 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# GoSmart - Platform E-Learning
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+GoSmart adalah platform pembelajaran online (LMS) berbasis web yang memungkinkan instruktur membuat dan menjual kursus, serta siswa mengikuti kursus secara online dengan sistem pembayaran terintegrasi.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Manajemen Kursus** — Buat, kelola, dan publikasikan kursus online (gratis & berbayar)
+- **Sistem Pembayaran** — Integrasi Midtrans (virtual account bank transfer)
+- **Keranjang Belanja** — Tambah kursus ke cart, checkout, dan lacak status pembayaran
+- **Sertifikat** — Generate sertifikat dengan QR Code otomatis setelah kursus selesai
+- **Live Streaming** — Streaming materi pembelajaran via YouTube
+- **Event** — Buat dan kelola acara/event edukatif
+- **Panel Admin** — Kelola pengguna, kursus, penarikan dana instruktur, dan konten iklan
+- **API** — REST API dengan autentikasi Laravel Sanctum
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Peran Pengguna
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Peran | Akses |
+|-------|-------|
+| **Admin** | Kelola seluruh sistem: pengguna, kursus, pembayaran, pengumuman |
+| **Instruktur/Teacher** | Buat kursus, kelola materi, lihat penghasilan, ajukan penarikan dana |
+| **Siswa/Member** | Daftar kursus, ikuti pembelajaran, dapatkan sertifikat |
 
-## Learning Laravel
+## Teknologi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **Backend:** Laravel 11, PHP
+- **Frontend:** Bootstrap 5, Livewire, jQuery, Vite
+- **Database:** MySQL
+- **Pembayaran:** Midtrans
+- **PDF & Sertifikat:** DomPDF, Simple QR Code
+- **API Auth:** Laravel Sanctum
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Persyaratan Sistem
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- PHP >= 8.2
+- Composer
+- Node.js >= 18 & NPM
+- MySQL 8.0+
+- Git
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Instalasi
 
-## Contributing
+### 1. Clone Repositori
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+git clone https://github.com/Gudangsoft/gosmart-dashbord-fresh.git
+cd gosmart-dashbord-fresh
+```
 
-## Code of Conduct
+### 2. Install Dependensi PHP
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer install
+```
 
-## Security Vulnerabilities
+### 3. Install Dependensi JavaScript
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+npm install
+```
 
-## License
+### 4. Konfigurasi Environment
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Edit file `.env` sesuai konfigurasi lokal:
+
+```env
+APP_NAME=GoSmart
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gosmart_db
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+### 5. Buat Database
+
+Buat database MySQL dengan nama `gosmart_db` (atau sesuai yang dikonfigurasi di `.env`), lalu jalankan migrasi:
+
+```bash
+php artisan migrate --seed
+```
+
+### 6. Build Assets Frontend
+
+```bash
+npm run build
+```
+
+Untuk mode development dengan hot reload:
+
+```bash
+npm run dev
+```
+
+### 7. Jalankan Server
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi di: `http://localhost:8000`
+
+---
+
+## Konfigurasi Midtrans (Pembayaran)
+
+1. Daftar akun di [Midtrans](https://midtrans.com)
+2. Dapatkan **Server Key** dan **Client Key** dari dashboard Midtrans
+3. Tambahkan ke `.env`:
+
+```env
+MIDTRANS_SERVER_KEY=your_server_key
+MIDTRANS_CLIENT_KEY=your_client_key
+MIDTRANS_IS_PRODUCTION=false
+```
+
+---
+
+## Cara Penggunaan
+
+### Sebagai Admin
+
+1. Login ke `/login` menggunakan akun admin
+2. Akses dashboard admin di `/admin/dashboard`
+3. **Kelola Pengguna** — `/admin/users` — lihat, setujui, ubah peran, atau hapus pengguna
+4. **Kelola Kursus** — `/admin/class` — setujui atau tolak kursus yang diajukan instruktur
+5. **Kelola Kategori** — `/admin/class-category` — tambah dan aktifkan kategori kursus
+6. **Kelola Penarikan Dana** — `/admin/withdraw` — proses permintaan penarikan instruktur
+7. **Pengumuman** — `/admin/pages` — buat halaman/pengumuman publik
+8. **Live Streaming** — `/admin/livestream` — tambahkan sesi live dari YouTube
+
+### Sebagai Instruktur/Teacher
+
+1. Daftar akun dan minta peran instruktur kepada admin
+2. Login dan akses dashboard instruktur
+3. **Buat Kursus Baru:**
+   - Masuk ke menu "Kelas Saya"
+   - Klik "Tambah Kelas Baru"
+   - Isi judul, deskripsi, harga, kategori, dan upload thumbnail
+   - Tambahkan materi berupa video/link
+   - Submit untuk ditinjau admin
+4. **Kelola Pendapatan** — Lihat riwayat penjualan dan ajukan penarikan dana
+5. **Kelola Event** — Buat acara dan pantau pendaftaran peserta
+
+### Sebagai Siswa/Member
+
+1. Daftar di `/register`, lalu verifikasi email
+2. Login di `/login`
+3. **Jelajahi Kursus** — Cari kursus gratis atau berbayar dari halaman utama
+4. **Enroll Kursus Gratis** — Klik "Ikuti Kursus" langsung tanpa pembayaran
+5. **Beli Kursus Berbayar:**
+   - Tambahkan kursus ke keranjang
+   - Masuk ke halaman checkout
+   - Pilih metode pembayaran (virtual account)
+   - Selesaikan pembayaran dalam 24 jam
+6. **Ikuti Pembelajaran** — Akses materi video setelah pembayaran dikonfirmasi
+7. **Dapatkan Sertifikat** — Sertifikat otomatis tersedia setelah kursus selesai, dapat diunduh sebagai PDF
+
+---
+
+## API Endpoints
+
+### Publik (Tanpa Autentikasi)
+
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| POST | `/api/v1/login` | Login, mendapatkan token Sanctum |
+| GET | `/api/v1/public/certificate` | Daftar sertifikat |
+| GET | `/api/v1/public/certificate/key/{code}` | Cek sertifikat berdasarkan kode |
+| GET | `/api/v1/public/statistics` | Statistik platform |
+| POST | `/api/v1/public/midtrans/va/create` | Buat virtual account pembayaran |
+
+### Terautentikasi (Wajib Bearer Token)
+
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| GET | `/api/v1/logout` | Logout |
+| GET | `/api/v1/course/index` | Daftar kursus |
+| POST | `/api/v1/course/store` | Buat kursus baru |
+| POST | `/api/v1/course/{id}/update` | Update kursus |
+| GET | `/api/v1/course/delete/{id}` | Hapus kursus |
+
+**Contoh request login:**
+
+```bash
+curl -X POST http://localhost:8000/api/v1/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "password": "password"}'
+```
+
+**Contoh request dengan token:**
+
+```bash
+curl http://localhost:8000/api/v1/course/index \
+  -H "Authorization: Bearer {token}"
+```
+
+---
+
+## Struktur Direktori Penting
+
+```
+app/
+├── Http/Controllers/
+│   ├── Auth/              # Login, Register, Reset Password
+│   ├── Backend/           # Fitur instruktur (Event, Voucher, Kreasi)
+│   ├── Api/               # REST API controllers
+│   └── Admin*/            # Panel admin
+├── Models/                # Eloquent models (User, ClassMenu, Order, dll.)
+resources/views/           # Blade templates
+routes/
+├── web.php                # Route web utama
+└── api.php                # Route REST API
+database/migrations/       # Skema database
+```
+
+---
+
+## Lisensi
+
+Proyek ini dikembangkan oleh **Gudangsoft** dan dilisensikan di bawah [MIT License](LICENSE).

@@ -1147,13 +1147,13 @@ class DashboardController extends Controller
         $data = array();
         $app = ProfileGacademy::where('id', 1)->where('status', 'p')->first();
         $data['app'] = [
-            'id' => $app->id,
-            'name' => $app->name,
-            'email' => $app->email,
-            'phone' => $app->hp,
-            'url' => $app->link,
-            'address' => $app->address,
-            'logo' => 'home-images/app/'.$app->logo,
+            'id'      => $app->id      ?? 1,
+            'name'    => $app->name    ?? config('app.name'),
+            'email'   => $app->email   ?? '',
+            'phone'   => $app->hp      ?? '',
+            'url'     => $app->link    ?? '',
+            'address' => $app->address ?? '',
+            'logo'    => $app ? 'home-images/app/'.$app->logo : '',
         ];
 
         $data['resetPassword']  = '/reset-password';

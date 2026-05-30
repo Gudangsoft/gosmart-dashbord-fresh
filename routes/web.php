@@ -23,6 +23,7 @@ use App\Http\Controllers\Frontend\Users\CreationController;
 use App\Http\Controllers\Frontend\Users\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LearningController;
+use App\Http\Controllers\ListchanelController;
 use App\Http\Controllers\LiveStreaming;
 use App\Http\Controllers\PageDetailController;
 use App\Http\Controllers\PagesController;
@@ -51,7 +52,7 @@ Route::get('/certificate/download/{code}', [CertificateController::class, 'downl
 Route::get('/certificate/{user_id}/{class_id}', [CertificateController::class, 'GenerateCertificate']);
 Route::get('/certificate_print/{user_id}/{class_id}', [CertificateController::class, 'PrintCertificate']);
 
-Route::get('/logout', [HomeController::class, 'logout']);
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout.get');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/test', [AdmindashboardController::class, 'test']);
 
@@ -128,7 +129,14 @@ Route::middleware(['role:admin,teacher'])->group(function () {
 
     Route::get('/', [DashboardController::class, 'home']);
     Route::get('/admin', [AdminController::class, 'index']);
-    Route::get('/dashboard/allmateri', [DashboardController::class, 'allmateri']);
+    Route::get('/dashboard/allmateri', [DashboardController::class, 'allmateri'])->name('videopage');
+    Route::get('/data-upload', [AdmindashboardController::class, 'admin'])->name('data-upload');
+    Route::get('/data-upload/create', [AdmindashboardController::class, 'create']);
+    Route::get('/data-upload/edit/{id}', [AdmindashboardController::class, 'edit']);
+    Route::post('/data-upload/update', [AdmindashboardController::class, 'updateview']);
+    Route::get('/data-upload/delete/{id}', [AdmindashboardController::class, 'delete_video']);
+    Route::get('/list-chanel', [ListchanelController::class, 'chanel'])->name('list-chanel');
+    Route::get('/add-chanel', [ChanelController::class, 'addPage'])->name('add-chanel');
     Route::get('/dashboard/user_materi/{id}', [DashboardController::class, 'user_materi']);
     Route::get('/dashboard/video_detail/{name}/{id}', [DashboardController::class, 'videoDetail']);
     Route::get('/dashboard/materi_add/{id}', [DashboardController::class, 'materi_add']);
@@ -189,7 +197,7 @@ Route::middleware(['role:admin,teacher'])->group(function () {
     Route::get('/dashboard/skill_reset', [DashboardController::class, 'skillReset']);
 
     // Live Streaming
-    Route::get('/dashboard/livestream', [LiveStreaming::class, 'index']);
+    Route::get('/dashboard/livestream', [LiveStreaming::class, 'index'])->name('Streaming');
     Route::get('/dashboard/livestream/{id}', [LiveStreaming::class, 'create']);
     Route::get('/dashboard/livestream_status/{id}/{s}', [LiveStreaming::class, 'setStatus']);
     Route::get('/dashboard/livestream_delete/{id}', [LiveStreaming::class, 'destroy']);

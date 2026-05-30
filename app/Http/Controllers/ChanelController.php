@@ -151,6 +151,10 @@ class ChanelController extends Controller
         return redirect('/dashboard/channel_detail/'.$id)->with('success','data berhasil ditambah');
     }
 
+    public function addPage(){
+        return view('backend.channels.add');
+    }
+
      //DELETE Content
      public function deleteContent($id){
         // dd($id);

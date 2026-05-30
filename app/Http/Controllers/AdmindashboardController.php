@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use app\User;
+use App\Models\User;
 use DB;
 use File;
-use app\view_stream;
+use App\view_stream;
 
 class AdmindashboardController extends Controller
 {

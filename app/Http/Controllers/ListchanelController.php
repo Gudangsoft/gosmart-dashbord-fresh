@@ -13,7 +13,7 @@ class ListchanelController extends Controller
 {
   public function chanel()
   {
-    $view_stream = DB::table('view_stream')->join('chanel','chanel.id','=','view_stream.chanel_id')->orderBy('created_at', 'desc')->get();
+    $view_stream = DB::table('view_stream')->join('chanel','chanel.id','=','view_stream.chanel_id')->orderBy('view_stream.created_at', 'desc')->get();
     $chanel = DB::table('chanel')->get();
     return view('admin.chanel-list',compact('chanel'));
   }
@@ -21,7 +21,7 @@ class ListchanelController extends Controller
 
   public function chanelview()
   {
-    $view_stream = DB::table('view_stream')->join('chanel','chanel.id','=','view_stream.chanel_id')->orderBy('created_at', 'desc')->get();
+    $view_stream = DB::table('view_stream')->join('chanel','chanel.id','=','view_stream.chanel_id')->orderBy('view_stream.created_at', 'desc')->get();
     $chanel = DB::table('chanel')->get();
     return view('chanel',compact('chanel'));
   }

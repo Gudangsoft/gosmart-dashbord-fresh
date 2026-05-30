@@ -1,0 +1,58 @@
+[
+    {
+        "id": "02072022152748",
+        "title": "Teamtrainit",
+        "url": "https:\/\/teamtrainit.com\/",
+        "path_image": "backend\/image\/partner\/partner-02072022152748trainit.png",
+        "status": "p",
+        "created_at": "2022-02-07 03:02:48"
+    },
+    {
+        "id": "02072022152850",
+        "title": "ciuss",
+        "url": "https:\/\/ciuss.com\/",
+        "path_image": "backend\/image\/partner\/partner-02072022152850ciuss.png",
+        "status": "p",
+        "created_at": "2022-02-07 03:02:50"
+    },
+    {
+        "id": "02072022152908",
+        "title": "Omahkemas",
+        "url": "#",
+        "path_image": "backend\/image\/partner\/partner-02072022152908omahkemas.jpg",
+        "status": "p",
+        "created_at": "2022-02-07 03:02:08"
+    },
+    {
+        "id": "02072022153014",
+        "title": "PPMULTINDO",
+        "url": "https:\/\/www.ppmultindo.com\/",
+        "path_image": "backend\/image\/partner\/partner-02072022153014ppmultindo.png",
+        "status": "p",
+        "created_at": "2022-02-07 03:02:14"
+    },
+    {
+        "id": "02072022153327",
+        "title": "amperakoding",
+        "url": "https:\/\/amperakoding.com\/",
+        "path_image": "backend\/image\/partner\/partner-02072022153327amperakoding.png",
+        "status": "p",
+        "created_at": "2022-02-07 03:02:27"
+    },
+    {
+        "id": "02072022162530",
+        "title": "HIDAYATUL MUBTADI'IN BULUSARI",
+        "url": "#",
+        "path_image": "backend\/image\/partner\/partner-02072022162530jumid.png",
+        "status": "p",
+        "created_at": "2022-02-07 04:02:30"
+    },
+    {
+        "id": "02232022103319",
+        "title": "netacad",
+        "url": "https:\/\/www.netacad.com\/",
+        "path_image": "backend\/image\/partner\/partner-02232022103319cisco-networking-academy-logo-0B2566178E-seeklogo.com.png",
+        "status": "p",
+        "created_at": "2022-02-23 10:02:19"
+    }
+]

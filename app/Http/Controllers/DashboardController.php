@@ -1001,7 +1001,7 @@ class DashboardController extends Controller
             'to_top' => $percent,
         ];
         $info = Pengumuman::latest('id')->first();
-        if($info->type == 1){
+        if($info && $info->type == 1){
             Alert::html('Info', $info->title, 'info')
                     ->showConfirmButton(
                         $btnText = '<a style="color:#fff" href="https://gosmart.id/announcement/'.$info->slug.'">Detail</a>'

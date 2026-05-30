@@ -1,47 +1,108 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GoSmart.id | Lupa Password</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/icofont.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+</head>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+<body>
+    <div class="main-wrapper">
+        <div class="overlay"></div>
+        <div class="section section-padding">
+            <div class="container">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                <div class="register-login-wrapper">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="register-login-images">
+                                <div class="shape-1">
+                                    <img src="{{ asset('assets/images/shape/shape-26.png') }}" alt="Shape">
+                                </div>
+                                <div class="images">
+                                    <img src="{{ asset('assets/images/register-login.png') }}" alt="GoSmart">
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
+                        <div class="col-lg-6">
+                            <div class="register-login-form">
+                                <h3 class="title">Lupa <span>Password?</span></h3>
+                                <p class="text-muted mb-4" style="font-size: 14px;">
+                                    Masukkan email terdaftar Anda. Kami akan mengirimkan tautan untuk mereset password.
+                                </p>
+
+                                @if (session('status'))
+                                    <div class="alert alert-success mb-3" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+
+                                <div class="form-wrapper">
+                                    <form method="POST" action="{{ route('password.email') }}">
+                                        @csrf
+
+                                        <div class="single-form">
+                                            <input
+                                                id="email"
+                                                type="email"
+                                                class="form-control @error('email') is-invalid @enderror"
+                                                name="email"
+                                                placeholder="Alamat Email"
+                                                value="{{ old('email') }}"
+                                                required
+                                                autocomplete="email"
+                                                autofocus>
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="single-form">
+                                            <div class="form-button">
+                                                <button type="submit" class="btn btn-primary btn-hover-dark w-100">
+                                                    Kirim Link Reset Password
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-form text-center">
+                                            <a href="{{ route('login') }}" class="btn btn-warning btn-hover-dark w-100">
+                                                &larr; Kembali ke Login
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
+
             </div>
         </div>
+        <div class="row text-center mb-4">
+            <p>&copy;{{ date('Y') }} GoSmart.id</p>
+        </div>
     </div>
-</div>
-@endsection
+
+    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

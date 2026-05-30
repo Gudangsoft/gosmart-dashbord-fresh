@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DetailController;
-use App\User;
+use App\Models\User;
 use App\chanel;
 use App\Models\ClassHistory;
 use App\Models\ClassRequest;

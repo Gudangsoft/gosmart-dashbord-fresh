@@ -20,11 +20,11 @@ class WithdrawModel extends Model
     ];
 
     public function user(){
-        return $this->belongsTo('App\User', 'user_id', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'user_id', 'id')->withTrashed();
     }
 
     public function acceptBy(){
-        return $this->belongsTo('App\User', 'accept_by', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'accept_by', 'id')->withTrashed();
     }
 
     public function getPayment(){

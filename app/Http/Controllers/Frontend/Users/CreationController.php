@@ -10,7 +10,7 @@ use App\Models\Cart;
 use App\Models\ClassCategory;
 use App\Models\Creation;
 use App\ResizeImage;
-use App\User;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;

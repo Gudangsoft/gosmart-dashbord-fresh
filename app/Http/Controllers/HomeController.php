@@ -17,7 +17,7 @@ use App\Models\PaymentModel;
 use App\Models\ProfileGacademy;
 use App\Models\Creation;
 use App\Ua\MobileDetect;
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;

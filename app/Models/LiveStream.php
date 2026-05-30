@@ -14,7 +14,7 @@ class LiveStream extends Model
     protected $dates = ['deleted_at'];
 
     public function getUser(){
-        return $this->belongsTo('App\User', 'add_by', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'add_by', 'id')->withTrashed();
     }
     public function getChannel(){
         return $this->belongsTo('App\chanel', 'add_by', 'id_user');

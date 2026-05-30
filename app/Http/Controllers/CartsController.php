@@ -8,7 +8,7 @@ use App\Models\ClassRequest;
 use App\Models\Order;
 use App\Models\Voucher;
 use App\Services\Midtrans\CreateSnapTokenService;
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;

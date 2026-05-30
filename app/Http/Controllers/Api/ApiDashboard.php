@@ -12,7 +12,7 @@ use App\Models\PaymentModel;
 use App\Models\ProfileGacademy;
 use App\Models\SkillModel;
 use App\Models\UserData;
-use App\User;
+use App\Models\User;
 use App\view_stream;
 use Carbon\Carbon;
 

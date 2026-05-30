@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\Public;
 use App\Http\Controllers\Controller;
 use App\Models\Certificate;
 use App\Models\ClassMenu;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 

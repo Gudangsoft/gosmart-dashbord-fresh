@@ -21,7 +21,7 @@ use App\Models\UserData;
 use App\Models\Event;
 use App\Models\EventRegisted;
 use App\Models\PagesModel;
-use App\User;
+use App\Models\User;
 use App\view_stream;
 use Illuminate\Http\Request;
 use Carbon\Carbon;

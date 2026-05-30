@@ -11,7 +11,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 use App\Models\Certificate;
-use App\User;
+use App\Models\User;
 use App\Models\ClassMenu;
 use App\Model\LogoMitra;
 

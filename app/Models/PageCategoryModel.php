@@ -19,6 +19,6 @@ class PageCategoryModel extends Model
     ];
 
     public function getUser(){
-        return $this->belongsTo('App\User', 'created_by', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'created_by', 'id')->withTrashed();
     }
 }

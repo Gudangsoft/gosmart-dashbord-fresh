@@ -29,7 +29,7 @@ class ClassHistory extends Model
         return $this->belongsTo('App\Models\ClassMenu', 'class_id', 'class_id')->withTrashed();
     }
     public function getUser(){
-        return $this->belongsTo('App\User', 'member_id', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'member_id', 'id')->withTrashed();
     }
     public function getMateri(){
         return $this->belongsTo('App\view_stream', 'materi_id', 'id')->withTrashed();

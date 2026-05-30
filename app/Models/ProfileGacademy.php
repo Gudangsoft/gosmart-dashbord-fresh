@@ -11,6 +11,6 @@ class ProfileGacademy extends Model
     protected $dates = ['deleted_at'];
 
     public function getUser(){
-        return $this->belongsTo('App\User', 'add_by', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'add_by', 'id')->withTrashed();
     }
 }

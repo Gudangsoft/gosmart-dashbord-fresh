@@ -6,7 +6,7 @@ use App\Models\Cart;
 use App\Models\ClassCategory;
 use App\Models\ClassMenu;
 use App\Models\ReviewClassModel;
-use App\User;
+use App\Models\User;
 use App\view_stream;
 use Illuminate\Http\Request;
 use DB;

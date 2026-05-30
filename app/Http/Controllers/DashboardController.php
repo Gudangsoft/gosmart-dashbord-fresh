@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use App\Mail\Confirm;
 use DB;
 use File;
-use App\User;
+use App\Models\User;
 use App\Models\class_menu;
 use App\Models\Level;
 use App\Models\Cart;

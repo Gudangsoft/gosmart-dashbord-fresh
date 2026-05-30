@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Models\ClassHistory;
 use App\Models\ClassLinkage;
 use App\Models\ClassMenu;
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\ClassLike;

@@ -6,7 +6,7 @@ use App\Http\Livewire\Event;
 use App\Models\Event as ModelsEvent;
 use App\Models\EventRegisted;
 use App\Models\Cart;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Mail;

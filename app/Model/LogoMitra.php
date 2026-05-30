@@ -20,7 +20,7 @@ class LogoMitra extends Model
         return $this->belongsTo('App\Models\ClassMenu', 'class_id', 'class_id')->withTrashed();
     }
     public function getUser(){
-        return $this->belongsTo('App\User', 'add_by', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'add_by', 'id')->withTrashed();
     }
 
 }

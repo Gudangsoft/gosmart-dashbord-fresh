@@ -25,6 +25,6 @@ class Voucher extends Model
     }
 
     public function getUser(){
-        return $this->belongsTo('App\User', 'user_id', 'id')->withTrashed();
+        return $this->belongsTo('App\Models\User', 'user_id', 'id')->withTrashed();
     }
 }

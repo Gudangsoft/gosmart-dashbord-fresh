@@ -9,7 +9,7 @@ use DB;
 use App\view_stream;
 use App\chanel;
 use App\Models\Category;
-use App\User;
+use App\Models\User;
 use App\Models\Level;
 use App\Models\ClassMenu;
 use App\Models\ClassHistory;

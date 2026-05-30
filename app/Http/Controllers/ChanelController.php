@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\chanel;
 use App\Models\ChannelData;
-use App\User;
+use App\Models\User;
 use App\view_stream;
 use App\Ua\MobileDetect;
 use File;

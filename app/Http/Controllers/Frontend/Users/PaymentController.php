@@ -8,7 +8,7 @@ use App\Models\Cart;
 use App\Models\ClassMenu;
 use App\Models\ClassRequest;
 use App\Models\Order;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
